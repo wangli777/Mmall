@@ -33,8 +33,9 @@ public class UserServiceImpl implements IUserService {
             return ServerResponse.createByErrorMessage("用户名不存在");
         }
         // todo MD5密码加密
+        String md5Password = MD5Util.MD5EncodeUtf8(password);
         //判断密码是否正确
-        User user = userMapper.login(username, password);
+        User user = userMapper.login(username, md5Password);
 
         if (user==null){
             //密码错误
