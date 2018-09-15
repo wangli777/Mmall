@@ -1,5 +1,5 @@
 ## 这是一个基于SSM的网上商城项目
-###项目过程中遇到的一些问题
+### 项目过程中遇到的一些问题
   
 - 项目在配置到tomcat中启动时报错：
   MappingJackson2HttpMessageConverter相关的错误。
