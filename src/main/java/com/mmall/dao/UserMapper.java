@@ -23,6 +23,7 @@ public interface UserMapper {
      */
     int checkUserName(String username);
 
+    int checkEmail(String field);
     /**
      * 登录方法
      * @param username 传入的用户名
@@ -30,4 +31,19 @@ public interface UserMapper {
      * @return 返回根据用户名和密码从数据库中查找到的数据封装好的用户对象
      */
     User login(@Param("username") String username, @Param("password") String password);
+
+    /**
+     * 根据username找到其对应的找回密码的问题
+     * @param username
+     * @return
+     */
+    String  getQuestionByName(String username);
+
+    int checkAnswer(@Param("username") String username,@Param("question") String question, @Param("answer")String answer);
+
+    int updatePasswordByName(@Param("password") String username, @Param("passwordNew") String passwordNew);
+
+    int checkPassword(@Param("userId") Integer userId, @Param("passwordOld") String passwordOld);
+
+    int checkEmailByUserId(@Param("email")String email,@Param("userId") Integer userId);
 }

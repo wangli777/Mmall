@@ -20,7 +20,8 @@
                     </list>
                 </property>
             </bean>
-            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+            <!--让@ResponseBody注解自动转换json -->
+            <bean  class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                 <property name="supportedMediaTypes">
                     <list>
                         <value>application/json;charset=UTF-8</value>

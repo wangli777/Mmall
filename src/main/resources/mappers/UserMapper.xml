@@ -165,4 +165,46 @@
     password = #{password}
   </select>
 
+    <select id="checkEmail" resultType="int" parameterType="string">
+        SELECT count(1)
+        FROM mmall_user
+        WHERE email= #{email}
+    </select>
+
+  <select id="getQuestionByName" resultType="string" parameterType="string">
+    SELECT question
+    FROM mmall_user
+    WHERE username = #{username}
+  </select>
+  <select id="checkAnswer" resultType="int" parameterType="map">
+    SELECT
+    COUNT(1)
+    FROM mmall_user
+    WHERE
+    username = #{username}
+    AND
+    question = #{question}
+    AND
+    answer = #{answer}
+  </select>
+
+  <update id="updatePasswordByName"  parameterType="map" >
+    UPDATE mmall_user
+    SET password = #{passwordNew},update_time = now()
+    WHERE username = #{username}
+  </update>
+  <select id="checkPassword" parameterType="map" resultType="int">
+    SELECT COUNT(1)
+    FROM mmoll_user
+    WHERE id = #{userId}
+    AND
+    password = #{passwordOld}
+  </select>
+  <select id="checkEmailByUserId" resultType="int" parameterType="map">
+    SELECT count(1)
+    FROM mmall_user
+    WHERE
+    id != #{userId}
+    AND email= #{email}
+  </select>
 </mapper>

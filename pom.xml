@@ -91,6 +91,17 @@
       <artifactId>jackson-mapper-asl</artifactId>
       <version>1.9.12</version>
     </dependency>
+    <!-- MappingJackson2HttpMessageConverter -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.6.5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.6.5</version>
+    </dependency>
 
     <dependency>
       <groupId>commons-dbcp</groupId>
